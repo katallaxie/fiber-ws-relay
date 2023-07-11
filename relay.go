@@ -1,6 +1,7 @@
 package relay
 
 import (
+	"context"
 	"errors"
 	"io"
 	"net"
@@ -69,6 +70,7 @@ func New(config Config, addr string) fiber.Handler {
 			if cfg.Origins[0] == "*" {
 				return true
 			}
+
 			origin := utils.UnsafeString(fctx.Request.Header.Peek("Origin"))
 			for i := range cfg.Origins {
 				if cfg.Origins[i] == origin {
@@ -121,7 +123,7 @@ func New(config Config, addr string) fiber.Handler {
 			}
 			defer conn.Close()
 
-			g, _ := errgroup.WithContext(c.Context())
+			g, _ := errgroup.WithContext(context.Background())
 
 			g.Go(readMessages(fconn, conn))
 			g.Go(writeMessages(fconn, conn))
@@ -138,7 +140,6 @@ func New(config Config, addr string) fiber.Handler {
 func writeMessages(w *websocket.Conn, conn net.Conn) func() error {
 	return func() error {
 		for {
-
 			writer, err := w.NextWriter(websocket.BinaryMessage)
 			if err != nil {
 				return err
@@ -172,6 +173,16 @@ func configDefault(config ...Config) Config {
 	var cfg Config
 	if len(config) > 0 {
 		cfg = config[0]
+	}
+
+	if len(cfg.Origins) == 0 {
+		cfg.Origins = []string{"*"}
+	}
+	if cfg.ReadBufferSize == 0 {
+		cfg.ReadBufferSize = 1024
+	}
+	if cfg.WriteBufferSize == 0 {
+		cfg.WriteBufferSize = 1024
 	}
 
 	return cfg
