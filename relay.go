@@ -59,7 +59,7 @@ func New(config Config, addr string) fiber.Handler {
 	// Set default config
 	cfg := configDefault(config)
 
-	var upgrader = websocket.FastHTTPUpgrader{
+	upgrader := websocket.FastHTTPUpgrader{
 		HandshakeTimeout:  cfg.HandshakeTimeout,
 		Subprotocols:      cfg.Subprotocols,
 		ReadBufferSize:    cfg.ReadBufferSize,

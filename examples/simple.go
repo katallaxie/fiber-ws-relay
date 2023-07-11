@@ -17,9 +17,7 @@ import (
 	"github.com/katallaxie/pkg/server"
 )
 
-var (
-	addr = flag.String("addr", "localhost:4222", "server addr")
-)
+var addr = flag.String("addr", "localhost:4222", "server addr")
 
 var _ server.Listener = (*svc)(nil)
 

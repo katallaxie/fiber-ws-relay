@@ -1,53 +1,12 @@
-# :partying_face: Template Go
+# :ticket: Websocket-TCP Relay
 
-> This is the standard template for Go projects of @katallaxie.
+[![Test & Build](https://github.com/katallaxie/fiber-ws-relay/actions/workflows/main.yml/badge.svg)](https://github.com/katallaxie/fiber-ws-relay/actions/workflows/main.yml)
+[![Go Report Card](https://goreportcard.com/badge/github.com/katallaxie/fiber-ws-relay)](https://goreportcard.com/report/github.com/katallaxie/fiber-ws-relay)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Taylor Swift](https://img.shields.io/badge/secured%20by-taylor%20swift-brightgreen.svg)](https://twitter.com/SwiftOnSecurity)
 
-> This is a GitHub Template Repository. You can use the green button to create a new repository based on this template. Read more about [GitHub Template Repositories](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template).
+Websocket-TCP Relay is a simple relay that allows to connect to a TCP server via a websocket connection. It is built with [Fiber](https://gofiber.io/).
 
-## Get Started
+## License
 
-```bash
-make setup MODULE_NAME=github.com/username/repo
-```
-
-Features
-
-* [Development Containers](https://containers.dev/)
-* [Editorconfig](https://editorconfig.org)
-* [GoReleaser](https://goreleaser.com)
-* [Hexagonal Architecture](https://en.wikipedia.org/wiki/Hexagonal_architecture_(software))
-* [GitHub Actions](https://github.com/features/actions) (lint, test, build, release)
-
-> You can `sh scripts/postCreateCommand.sh` if you are not running in a remote container or on [Codespaces](https://github.com/features/codespaces).
-
-## Usage
-
-This template supports `Makefile` to run tooling.
-
-> `make` is choosen as it is available on most systems.
-
-```bash
-# show `help`
-make help
-```
-
-## Setup
-
-Setup the project.
-
-```bash
-make setup MODULE_NAME=github.com/username/repo
-```
-
-Other available targets are
-
-* `build`
-* `fmt`
-* `lint`
-* `vet`
-* `generate`
-* `clean`
-
-The convention is to use `make` to run the build.
-
-Happy coding!
+[MIT](/LICENSE)
