@@ -7,6 +7,21 @@
 
 Websocket-TCP Relay is a simple relay that allows to connect to a TCP server via a websocket connection. It is built with [Fiber](https://gofiber.io/).
 
+## Usage
+
+This creates a middleware relay that connects to a TCP server on `localhost:4222` and relays the data between the websocket and the TCP server.
+
+```go
+app := fiber.New()
+
+app.Use(logger.New())
+app.Get("/ws", relay.New(relay.Config{}, "localhost:4222"))
+
+if err := app.Listen(":8080"); err != nil {
+	return err
+}
+```
+
 ## License
 
 [MIT](/LICENSE)
