@@ -1,0 +1,30 @@
+# .github/workflows/release.yml
+
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  test:
+    permissions:
+      checks: write
+    uses: ./.github/workflows/main.yml
+
+  release:
+    runs-on: ubuntu-latest
+    needs: [ test ]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-go@v4
+        with:
+          go-version-file: ./go.mod
+      - uses: goreleaser/goreleaser-action@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+        with:
+          version: latest
+          args: release
+        if: success()

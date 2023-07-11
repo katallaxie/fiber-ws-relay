@@ -1,0 +1,55 @@
+project_name: template-go
+
+builds:
+   -
+    id: main
+    binary: main-{{.Os}}-{{ .Arch }}
+    main: main.go
+    goos:
+      - windows
+      - darwin
+      - linux
+    goarch:
+      - 386
+      - amd64
+      - arm
+      - arm64
+    ignore:
+        - goos: darwin
+          goarch: 386
+    env:
+      - CGO_ENABLED=0
+    ldflags:
+        - -s -w
+    no_unique_dist_dir: true
+
+archives:
+  -
+    id: main
+    builds:
+      - main
+    name_template: "main_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+
+dockers:
+  -
+    dockerfile: Dockerfile
+    goos: linux
+    goarch: amd64
+    ids:
+      - main
+    image_templates:
+      - "ghcr.io/katallaxie/{{.ProjectName}}:latest"
+      - "ghcr.io/katallaxie/{{.ProjectName}}:{{ .Tag }}"
+      - "ghcr.io/katallaxie/{{.ProjectName}}"
+
+gomod:
+  proxy: true
+
+release:
+  draft: true
+
+snapshot:
+  name_template: "{{.Tag}}"
+
+checksum:
+  name_template: "main_checksums.txt"
