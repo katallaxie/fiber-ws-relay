@@ -8,7 +8,7 @@ require (
 	github.com/golang/mock v1.7.0-rc.1
 	github.com/golangci/golangci-lint v1.53.3
 	github.com/katallaxie/pkg v0.5.4
-	github.com/valyala/fasthttp v1.47.0
+	github.com/valyala/fasthttp v1.48.0
 	golang.org/x/sync v0.2.0
 	mvdan.cc/gofumpt v0.5.0
 )
