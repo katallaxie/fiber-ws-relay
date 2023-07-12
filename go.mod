@@ -9,7 +9,7 @@ require (
 	github.com/golangci/golangci-lint v1.53.3
 	github.com/katallaxie/pkg v0.5.4
 	github.com/valyala/fasthttp v1.48.0
-	golang.org/x/sync v0.2.0
+	golang.org/x/sync v0.3.0
 	mvdan.cc/gofumpt v0.5.0
 )
 
