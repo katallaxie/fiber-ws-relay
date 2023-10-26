@@ -7,7 +7,7 @@ require (
 	github.com/gofiber/fiber/v2 v2.50.0
 	github.com/golang/mock v1.7.0-rc.1
 	github.com/golangci/golangci-lint v1.55.1
-	github.com/katallaxie/pkg v0.5.11
+	github.com/katallaxie/pkg v0.5.12
 	github.com/valyala/fasthttp v1.50.0
 	golang.org/x/sync v0.4.0
 	mvdan.cc/gofumpt v0.5.0
