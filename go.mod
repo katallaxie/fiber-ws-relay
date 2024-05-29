@@ -3,12 +3,12 @@ module github.com/katallaxie/fiber-ws-relay
 go 1.20
 
 require (
-	github.com/fasthttp/websocket v1.5.8
+	github.com/fasthttp/websocket v1.5.9
 	github.com/gofiber/fiber/v2 v2.52.4
 	github.com/golang/mock v1.7.0-rc.1
 	github.com/golangci/golangci-lint v1.59.0
 	github.com/katallaxie/pkg v0.6.5
-	github.com/valyala/fasthttp v1.52.0
+	github.com/valyala/fasthttp v1.54.0
 	golang.org/x/sync v0.7.0
 	mvdan.cc/gofumpt v0.6.0
 )
@@ -97,7 +97,7 @@ require (
 	github.com/karamaru-alpha/copyloopvar v1.1.0 // indirect
 	github.com/kisielk/errcheck v1.7.0 // indirect
 	github.com/kkHAIKE/contextcheck v1.1.5 // indirect
-	github.com/klauspost/compress v1.17.7 // indirect
+	github.com/klauspost/compress v1.17.8 // indirect
 	github.com/kulti/thelper v0.6.3 // indirect
 	github.com/kunwardeep/paralleltest v1.0.10 // indirect
 	github.com/kyoh86/exportloopref v0.1.11 // indirect
