@@ -1,55 +1,16 @@
-project_name: template-go
-
+before:
+  hooks:
+    - go mod tidy
 builds:
-   -
-    id: main
-    binary: main-{{.Os}}-{{ .Arch }}
-    main: main.go
-    goos:
-      - windows
-      - darwin
-      - linux
-    goarch:
-      - 386
-      - amd64
-      - arm
-      - arm64
-    ignore:
-        - goos: darwin
-          goarch: 386
-    env:
-      - CGO_ENABLED=0
-    ldflags:
-        - -s -w
-    no_unique_dist_dir: true
-
-archives:
-  -
-    id: main
-    builds:
-      - main
-    name_template: "main_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
-
-dockers:
-  -
-    dockerfile: Dockerfile
-    goos: linux
-    goarch: amd64
-    ids:
-      - main
-    image_templates:
-      - "ghcr.io/katallaxie/{{.ProjectName}}:latest"
-      - "ghcr.io/katallaxie/{{.ProjectName}}:{{ .Tag }}"
-      - "ghcr.io/katallaxie/{{.ProjectName}}"
-
-gomod:
-  proxy: true
-
+  - skip: true
 release:
-  draft: true
+  header: |
+    ## Changelog ({{ .Date }})
 
-snapshot:
-  name_template: "{{.Tag}}"
-
-checksum:
-  name_template: "main_checksums.txt"
+    Welcome to this new release! We hope you enjoy the changes we've made.
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - "^docs:"
+      - "^test:"
