@@ -6,7 +6,7 @@ toolchain go1.22.4
 
 require (
 	github.com/fasthttp/websocket v1.5.9
-	github.com/gofiber/fiber/v2 v2.52.4
+	github.com/gofiber/fiber/v2 v2.52.5
 	github.com/golang/mock v1.7.0-rc.1
 	github.com/golangci/golangci-lint v1.59.1
 	github.com/katallaxie/pkg v0.6.5
