@@ -4,12 +4,12 @@ go 1.21
 toolchain go1.22.5
 
 require (
-	github.com/fasthttp/websocket v1.5.10
+	github.com/fasthttp/websocket v1.5.12
 	github.com/gofiber/fiber/v2 v2.52.6
 	github.com/golang/mock v1.7.0-rc.1
 	github.com/golangci/golangci-lint v1.59.1
 	github.com/katallaxie/pkg v0.6.6
-	github.com/valyala/fasthttp v1.57.0
+	github.com/valyala/fasthttp v1.58.0
 	golang.org/x/sync v0.11.0
 	mvdan.cc/gofumpt v0.7.0
 )
@@ -189,9 +189,9 @@ require (
 	golang.org/x/exp v0.0.0-20240103183307-be819d1f06fc // indirect
 	golang.org/x/exp/typeparams v0.0.0-20240314144324-c7f7c6466f7f // indirect
 	golang.org/x/mod v0.18.0 // indirect
-	golang.org/x/net v0.30.0 // indirect
+	golang.org/x/net v0.33.0 // indirect
 	golang.org/x/sys v0.28.0 // indirect
-	golang.org/x/text v0.19.0 // indirect
+	golang.org/x/text v0.21.0 // indirect
 	golang.org/x/tools v0.22.0 // indirect
 	google.golang.org/protobuf v1.33.0 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
