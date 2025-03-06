@@ -10,7 +10,7 @@ require (
 	github.com/golangci/golangci-lint v1.59.1
 	github.com/katallaxie/pkg v0.7.0
 	github.com/valyala/fasthttp v1.58.0
-	golang.org/x/sync v0.11.0
+	golang.org/x/sync v0.12.0
 	mvdan.cc/gofumpt v0.7.0
 )
 
