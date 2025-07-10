@@ -1,6 +1,7 @@
 module github.com/katallaxie/fiber-ws-relay
 
-go 1.21
+go 1.23.0
+
 toolchain go1.23.7
 
 require (
@@ -10,7 +11,7 @@ require (
 	github.com/golangci/golangci-lint v1.59.1
 	github.com/katallaxie/pkg v0.7.0
 	github.com/valyala/fasthttp v1.58.0
-	golang.org/x/sync v0.11.0
+	golang.org/x/sync v0.16.0
 	mvdan.cc/gofumpt v0.7.0
 )
 
