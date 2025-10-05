@@ -23,9 +23,13 @@ var _ server.Listener = (*svc)(nil)
 
 type svc struct{}
 
-func (s *svc) Start(ctx context.Context, ready server.ReadyFunc, run server.RunFunc) func() error {
+func (s *svc) Start(ctx context.Context, _ server.ReadyFunc, _ server.RunFunc) func() error {
 	return func() error {
-		l, err := net.Listen("tcp4", *addr)
+		cfg := net.ListenConfig{
+			KeepAlive: time.Minute,
+		}
+
+		l, err := cfg.Listen(ctx, "tcp4", *addr)
 		if err != nil {
 			return err
 		}
@@ -57,7 +61,7 @@ func (s *svc) Start(ctx context.Context, ready server.ReadyFunc, run server.RunF
 
 type ws struct{}
 
-func (ws *ws) Start(ctx context.Context, ready server.ReadyFunc, run server.RunFunc) func() error {
+func (ws *ws) Start(_ context.Context, _ server.ReadyFunc, _ server.RunFunc) func() error {
 	return func() error {
 		app := fiber.New()
 
@@ -74,7 +78,7 @@ func (ws *ws) Start(ctx context.Context, ready server.ReadyFunc, run server.RunF
 
 type multiplex struct{}
 
-func (m *multiplex) Start(ctx context.Context, ready server.ReadyFunc, run server.RunFunc) func() error {
+func (m *multiplex) Start(ctx context.Context, _ server.ReadyFunc, _ server.RunFunc) func() error {
 	return func() error {
 		ticker := time.NewTicker(time.Second)
 		defer ticker.Stop()
@@ -108,10 +112,7 @@ func (m *multiplex) Start(ctx context.Context, ready server.ReadyFunc, run serve
 }
 
 func main() {
-	ctx, cancel := context.WithCancel(context.Background())
-	defer cancel()
-
-	s, _ := server.WithContext(ctx)
+	s, _ := server.WithContext(context.Background())
 
 	svc := &svc{}
 	s.Listen(svc, false)
@@ -122,7 +123,5 @@ func main() {
 	m := &multiplex{}
 	s.Listen(m, false)
 
-	if err := s.Wait(); err != nil {
-		log.Fatal(err)
-	}
+	log.Fatal(s.Wait())
 }

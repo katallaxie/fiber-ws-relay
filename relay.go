@@ -86,7 +86,11 @@ func New(config Config, addr string) fiber.Handler {
 			return c.Next()
 		}
 
-		conn := acquireConn()
+		conn, ok := acquireConn()
+		if !ok {
+			return fiber.ErrInternalServerError
+		}
+
 		// locals
 		c.Context().VisitUserValues(func(key []byte, value interface{}) {
 			conn.locals[string(key)] = value
@@ -99,25 +103,26 @@ func New(config Config, addr string) fiber.Handler {
 		}
 
 		// queries
-		c.Context().QueryArgs().VisitAll(func(key, value []byte) {
+		for key, value := range c.Context().QueryArgs().All() {
 			conn.queries[string(key)] = string(value)
-		})
+		}
 
 		// cookies
-		c.Context().Request.Header.VisitAllCookie(func(key, value []byte) {
+		for key, value := range c.Context().Request.Header.Cookies() {
 			conn.cookies[string(key)] = string(value)
-		})
+		}
 
 		// headers
-		c.Context().Request.Header.VisitAll(func(key, value []byte) {
+		for key, value := range c.Context().Request.Header.All() {
 			conn.headers[string(key)] = string(value)
-		})
+		}
 
 		if err := upgrader.Upgrade(c.Context(), func(fconn *websocket.Conn) {
 			conn.Conn = fconn
 			defer releaseConn(conn)
 
-			conn, err := net.Dial("tcp", addr)
+			var d net.Dialer
+			conn, err := d.DialContext(c.Context(), "tcp", addr)
 			if err != nil {
 				return
 			}
@@ -198,25 +203,30 @@ type Conn struct {
 	queries map[string]string
 }
 
-// Conn pool
+// Conn pool.
 var poolConn = sync.Pool{
 	New: func() interface{} {
 		return new(Conn)
 	},
 }
 
-// Acquire Conn from pool
-func acquireConn() *Conn {
-	conn := poolConn.Get().(*Conn)
+// Acquire Conn from pool.
+func acquireConn() (*Conn, bool) {
+	conn, ok := poolConn.Get().(*Conn)
+	if !ok {
+		return nil, false
+	}
+
 	conn.locals = make(map[string]interface{})
 	conn.params = make(map[string]string)
 	conn.queries = make(map[string]string)
 	conn.cookies = make(map[string]string)
 	conn.headers = make(map[string]string)
-	return conn
+
+	return conn, true
 }
 
-// Return Conn to pool
+// Return Conn to pool.
 func releaseConn(conn *Conn) {
 	conn.Conn = nil
 	poolConn.Put(conn)
