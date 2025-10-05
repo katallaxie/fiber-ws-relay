@@ -5,7 +5,11 @@ GO 					?= go
 GO_TOOL 			?= $(GO) tool
 GO_TEST 			?= $(GO_TOOL) gotest.tools/gotestsum --format pkgname
 GO_RELEASER 		?= $(GO_TOOL) github.com/goreleaser/goreleaser
-GO_AIR 				?= air
+GO_AIR 				?= $(GO_TOOL) github.com/air-verse/air
+
+.PHONY: start
+start: ## Start the service.
+	$(GO_AIR) -c examples/air.toml
 
 .PHONY: release
 release: ## Release the project.

@@ -121,8 +121,11 @@ func New(config Config, addr string) fiber.Handler {
 			conn.Conn = fconn
 			defer releaseConn(conn)
 
-			var d net.Dialer
-			conn, err := d.DialContext(c.Context(), "tcp", addr)
+			ctx, cancel := context.WithCancel(context.Background())
+			defer cancel()
+
+			dialer := net.Dialer{}
+			conn, err := dialer.DialContext(ctx, "tcp", addr)
 			if err != nil {
 				return
 			}
