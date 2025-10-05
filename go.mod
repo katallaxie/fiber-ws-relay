@@ -14,7 +14,7 @@ require (
 	github.com/fasthttp/websocket v1.5.8
 	github.com/gofiber/fiber/v2 v2.52.9
 	github.com/katallaxie/pkg v0.7.9
-	github.com/valyala/fasthttp v1.65.0
+	github.com/valyala/fasthttp v1.66.0
 	golang.org/x/sync v0.17.0
 )
 
