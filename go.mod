@@ -11,7 +11,7 @@ tool (
 )
 
 require (
-	github.com/fasthttp/websocket v1.5.8
+	github.com/fasthttp/websocket v1.5.12
 	github.com/gofiber/fiber/v2 v2.52.9
 	github.com/katallaxie/pkg v0.7.9
 	github.com/valyala/fasthttp v1.65.0
@@ -189,7 +189,7 @@ require (
 	github.com/santhosh-tekuri/jsonschema/v6 v6.0.2 // indirect
 	github.com/sashamelentyev/interfacebloat v1.1.0 // indirect
 	github.com/sashamelentyev/usestdlibvars v1.29.0 // indirect
-	github.com/savsgio/gotils v0.0.0-20240303185622-093b76447511 // indirect
+	github.com/savsgio/gotils v0.0.0-20240704082632-aef3928b8a38 // indirect
 	github.com/securego/gosec/v2 v2.22.8 // indirect
 	github.com/sirupsen/logrus v1.9.3 // indirect
 	github.com/sivchari/containedctx v1.0.3 // indirect
