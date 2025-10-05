@@ -9,11 +9,11 @@ import (
 	"net/url"
 	"time"
 
-	relay "github.com/katallaxie/fiber-ws-relay"
+	relay "github.com/katallaxie/fiber-ws-relay/v3"
 
 	"github.com/fasthttp/websocket"
-	"github.com/gofiber/fiber/v2"
-	"github.com/gofiber/fiber/v2/middleware/logger"
+	"github.com/gofiber/fiber/v3"
+	"github.com/gofiber/fiber/v3/middleware/logger"
 	"github.com/katallaxie/pkg/server"
 )
 

@@ -7,6 +7,12 @@
 
 Websocket-TCP Relay is a simple relay that allows to connect to a TCP server via a websocket connection. It is built with [Fiber](https://gofiber.io/).
 
+## 🛸 Installation
+
+```bash
+go get github.com/katallaxie/fiber-ws-relay/v3
+```
+
 ## Usage
 
 This creates a middleware relay that connects to a TCP server on `localhost:4222` and relays the data between the websocket and the TCP server.
