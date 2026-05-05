@@ -16,7 +16,7 @@ require (
 	github.com/gofiber/fiber/v3 v3.2.0
 	github.com/katallaxie/fiber-ws-relay/v3 v3.0.0
 	github.com/katallaxie/pkg v0.7.11
-	github.com/valyala/fasthttp v1.70.0
+	github.com/valyala/fasthttp v1.71.0
 	golang.org/x/sync v0.20.0
 )
 
@@ -139,7 +139,7 @@ require (
 	github.com/karamaru-alpha/copyloopvar v1.2.1 // indirect
 	github.com/kisielk/errcheck v1.9.0 // indirect
 	github.com/kkHAIKE/contextcheck v1.1.6 // indirect
-	github.com/klauspost/compress v1.18.5 // indirect
+	github.com/klauspost/compress v1.18.6 // indirect
 	github.com/kulti/thelper v0.7.1 // indirect
 	github.com/kunwardeep/paralleltest v1.0.14 // indirect
 	github.com/lasiar/canonicalheader v1.1.2 // indirect
