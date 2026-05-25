@@ -13,7 +13,7 @@ tool (
 require (
 	github.com/fasthttp/websocket v1.5.12
 	github.com/gofiber/fiber/v2 v2.52.13
-	github.com/gofiber/fiber/v3 v3.2.0
+	github.com/gofiber/fiber/v3 v3.3.0
 	github.com/valyala/fasthttp v1.71.0
 	golang.org/x/sync v0.20.0
 )
@@ -100,7 +100,7 @@ require (
 	github.com/gobwas/glob v0.2.3 // indirect
 	github.com/godoc-lint/godoc-lint v0.10.0 // indirect
 	github.com/gofiber/schema v1.7.1 // indirect
-	github.com/gofiber/utils/v2 v2.0.4 // indirect
+	github.com/gofiber/utils/v2 v2.0.6 // indirect
 	github.com/gofrs/flock v0.12.1 // indirect
 	github.com/gohugoio/hugo v0.149.1 // indirect
 	github.com/golangci/asciicheck v0.5.0 // indirect
@@ -155,7 +155,7 @@ require (
 	github.com/maratori/testpackage v1.1.1 // indirect
 	github.com/matoous/godox v1.1.0 // indirect
 	github.com/mattn/go-colorable v0.1.14 // indirect
-	github.com/mattn/go-isatty v0.0.21 // indirect
+	github.com/mattn/go-isatty v0.0.22 // indirect
 	github.com/mattn/go-runewidth v0.0.16 // indirect
 	github.com/mgechev/revive v1.12.0 // indirect
 	github.com/mitchellh/go-homedir v1.1.0 // indirect
@@ -237,14 +237,14 @@ require (
 	go.uber.org/multierr v1.11.0 // indirect
 	go.uber.org/zap v1.27.1 // indirect
 	go.yaml.in/yaml/v2 v2.4.3 // indirect
-	golang.org/x/crypto v0.50.0 // indirect
+	golang.org/x/crypto v0.51.0 // indirect
 	golang.org/x/exp/typeparams v0.0.0-20250911091902-df9299821621 // indirect
-	golang.org/x/mod v0.34.0 // indirect
-	golang.org/x/net v0.53.0 // indirect
-	golang.org/x/sys v0.43.0 // indirect
-	golang.org/x/term v0.42.0 // indirect
-	golang.org/x/text v0.36.0 // indirect
-	golang.org/x/tools v0.43.0 // indirect
+	golang.org/x/mod v0.35.0 // indirect
+	golang.org/x/net v0.54.0 // indirect
+	golang.org/x/sys v0.44.0 // indirect
+	golang.org/x/term v0.43.0 // indirect
+	golang.org/x/text v0.37.0 // indirect
+	golang.org/x/tools v0.44.0 // indirect
 	google.golang.org/protobuf v1.36.11 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	gotest.tools/gotestsum v1.12.1 // indirect
