@@ -17,7 +17,7 @@ require (
 	github.com/katallaxie/fiber-ws-relay/v3 v3.0.0
 	github.com/katallaxie/pkg v0.7.11
 	github.com/valyala/fasthttp v1.71.0
-	golang.org/x/sync v0.20.0
+	golang.org/x/sync v0.21.0
 )
 
 require (
