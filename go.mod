@@ -12,7 +12,7 @@ tool (
 
 require (
 	github.com/fasthttp/websocket v1.5.12
-	github.com/gofiber/fiber/v2 v2.52.13
+	github.com/gofiber/fiber/v2 v2.52.14
 	github.com/gofiber/fiber/v3 v3.4.0
 	github.com/katallaxie/fiber-ws-relay/v3 v3.0.0
 	github.com/katallaxie/pkg v0.7.11
