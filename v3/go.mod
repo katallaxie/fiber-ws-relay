@@ -15,7 +15,7 @@ require (
 	github.com/gofiber/fiber/v2 v2.52.13
 	github.com/gofiber/fiber/v3 v3.4.0
 	github.com/valyala/fasthttp v1.72.0
-	golang.org/x/sync v0.21.0
+	golang.org/x/sync v0.22.0
 )
 
 require (
