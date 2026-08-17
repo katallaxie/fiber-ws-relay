@@ -12,7 +12,7 @@ tool (
 
 require (
 	github.com/fasthttp/websocket v1.5.12
-	github.com/gofiber/fiber/v2 v2.52.13
+	github.com/gofiber/fiber/v2 v2.52.15
 	github.com/gofiber/fiber/v3 v3.4.0
 	github.com/valyala/fasthttp v1.72.0
 	golang.org/x/sync v0.21.0
