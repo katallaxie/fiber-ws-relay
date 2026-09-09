@@ -1,6 +1,6 @@
 module github.com/katallaxie/fiber-ws-relay
 
-go 1.25.0
+go 1.26.0
 
 tool (
 	github.com/air-verse/air
@@ -17,7 +17,7 @@ require (
 	github.com/katallaxie/fiber-ws-relay/v3 v3.0.0
 	github.com/katallaxie/pkg v0.7.11
 	github.com/valyala/fasthttp v1.72.0
-	golang.org/x/sync v0.21.0
+	golang.org/x/sync v0.23.0
 )
 
 require (
